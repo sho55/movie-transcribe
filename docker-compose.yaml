@@ -1,0 +1,12 @@
+version: '3'
+services:
+  python:
+    platform: linux/amd64 #Apple Mシリーズ対応のため他のモデルならコメントアウト
+    build: ./docker-config/python
+    working_dir: /var/www/src
+    volumes:
+      - ./src:/var/www/src
+    environment:
+      - 'TZ=Asia/Tokyo'
+      - 'LC_CTYPE=C.UTF-8'
+    tty: true
